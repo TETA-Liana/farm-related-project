@@ -20,7 +20,7 @@ const createSupplierProduct = asyncHandler(async (req, res) => {
         description
     } = req.body
 
-    if (name & address === '') {
+ if (name & address === '') {
         res.status(400)
         throw new Error('No Products Items')
     } else {
@@ -28,7 +28,7 @@ const createSupplierProduct = asyncHandler(async (req, res) => {
             provider: 'openstreetmap'
         };
 
-        let geoCoder = nodeGeocoder(options);
+       let geoCoder = nodeGeocoder(options);
 
         const getCordinates = geoCoder.geocode(address).then(
             response => {
